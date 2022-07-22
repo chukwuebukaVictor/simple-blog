@@ -9,8 +9,8 @@
 <body>
   <nav>
     <div class="site-title">
-      <a href="/"><h1>Blog Ninja</h1></a>
-      <p>Net ninja site</p>
+      <a href="/"><h1>Simple Blog</h1></a>
+      <p>simple site</p>
     </div>
     <ul>
       <li><a href="/">Blogs</a></li>
@@ -18,8 +18,16 @@
       <li><a href="/blogs/create">New Blog</a></li>
     </ul>
   </nav>
-  <div class="not-found content">
-    Oops, page not found :) 
+  <div class="create-blog content">
+    <form>
+      <label for="title">Blog title:</label>
+      <input type="text" id="'title" required>
+      <label for="snippet">Blog snippet</label>
+      <input type="text" id="snippet">
+      <label for="body">Blog body</label>
+      <textarea id="body" required></textarea>
+      <button>Submit</button>
+    </form>
   </div>
 </body>
 </html>
