@@ -1,7 +1,14 @@
 const express = require('express');
 const morgan = require('morgan');
+const mongoose = require('mongoose');
+
 const app = express();
 
+//Connect to mongodb
+const MONGO_URI = 'mongodb+srv://Victor:Buckyoz@nodeexpressprojects.nbnlu.mongodb.net/create-blog?retryWrites=true&w=majority'
+mongoose.connect(MONGO_URI)
+.then((result)=> app.listen(5000))
+.catch((err)=>console.log(err))
 //Register view engines
 app.set('view engine','ejs');
 
@@ -37,4 +44,3 @@ app.use((req,res)=>{
 
 
 
-app.listen(5000)
