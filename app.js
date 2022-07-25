@@ -1,7 +1,14 @@
 const express = require('express');
+const morgan = require('morgan');
 const app = express();
+
+//Register view engines
 app.set('view engine','ejs');
 
+//middleware and static files(images, css)
+app.use(express.static('public'))
+
+app.use(morgan('tiny'))  
 app.get('/',(req,res)=>{
     const blogs = [
       {title: 'Victor finds eggs', snippet: 'Lorem ipsum dolor sit amet, consectetur'},
