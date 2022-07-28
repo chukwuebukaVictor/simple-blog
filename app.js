@@ -6,7 +6,7 @@ const blogRoutes = require('./routes/blogRoutes')
 const app = express();
 
 //Connect to mongodb
-const MONGO_URI = 'mongodb+srv://Victor:Buckyoz@nodeexpressprojects.nbnlu.mongodb.net/create-blog?retryWrites=true&w=majority'
+const MONGO_URI = 'mongodb+srv://Victor:Buka@nodeexpressprojects.nbnlu.mongodb.net/create-blog?retryWrites=true&w=majority'
 mongoose.connect(MONGO_URI)
 .then((result)=> app.listen(5000))
 .catch((err)=>console.log(err))
