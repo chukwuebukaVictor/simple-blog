@@ -2,11 +2,23 @@ const express = require('express');
 const morgan = require('morgan');
 const mongoose = require('mongoose');
 const blogRoutes = require('./routes/blogRoutes')
+const { DB_PASSWWORD, DATABASE } = require('./config')
 
 const app = express();
 
+
+//******Body parser middleware************//
+// 1.app.use(express.json())
+// 2.app.use(express.urlencoded({extended: true}))
+// For postman post request: res.send(req.body)
+
+
 //Connect to mongodb
-const MONGO_URI = 'mongodb+srv://Victor:Buka@nodeexpressprojects.nbnlu.mongodb.net/create-blog?retryWrites=true&w=majority'
+
+const MONGO_URI = `DATABASE.replace(
+  '<PASSWORD>',
+  DATABASE_PASSWORD
+)`;
 mongoose.connect(MONGO_URI)
 .then((result)=> app.listen(5000))
 .catch((err)=>console.log(err))
